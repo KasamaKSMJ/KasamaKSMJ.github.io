@@ -714,6 +714,70 @@
       margin-bottom: 6px;
     }
   }
+    
+  /* Education Section */
+  .education-section {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  
+  .education-section > .eyebrow {
+    margin-bottom: 24px;
+  }
+  
+  .education-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px;
+    align-items: start;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .education-details h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .education-details p,
+  .education-meta p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .education-details ul {
+    padding-left: 24px;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .education-meta {
+    min-width: 180px;
+    text-align: right;
+  }
+  
+  .education-location {
+    font-weight: 700;
+  }
+  
+  .education-year {
+    color: var(--muted);
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .education-item {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  
+    .education-meta {
+      text-align: left;
+      min-width: 0;
+    }
+  }
   </style>
 </head>
 
@@ -738,8 +802,8 @@
     <header class="hero container" id="home">
       <div>
         <p class="eyebrow">UX/UI Designer · Graphic Designer</p>
-        <h1>Designing digital<br>
-          experiences that <span>work.</span>
+        <h1>Welcome to<br>
+          My Work <span>Portfolio.</span>
         </h1>
       <section id="about">
         <div class="container about-layout">
@@ -760,16 +824,6 @@
               using WordPress, and creating website mockups that are
               implemented into the organization’s live website.
             </p>
-      
-            <div class="hero-actions about-actions">
-              <a class="btn btn-primary" href="#work">
-                Explore My Work ↗
-              </a>
-      
-              <a class="btn btn-secondary" href="#contact">
-                Get in Touch
-              </a>
-            </div>
           </div>
       
           <!-- Right: Skills -->
@@ -824,20 +878,42 @@
               HTML / CSS / JavaScript
               <span>Front-end development fundamentals (Beginer and Learning)</span>
             </div>
-      
           </div>
-      
         </div>
       </section>
-
+   
+      <section id="education">
+        <div class="container education-section">
+          <p class="eyebrow">Education</p>
+          <div class="education-item">
+      
+            <!-- Left Column -->
+            <div class="education-details">
+              <h3>Burapha University</h3>
+              <p>Faculty of Informatics, Burapha University</p>
+      
+              <ul>
+                <li>Bachelor of Science</li>
+                <li>Computer Science</li>
+                <li>GPA: 3.06</li>
+              </ul>
+            </div>
+      
+            <!-- Right Column -->
+            <div class="education-meta">
+              <p class="education-location">Chonburi, Thailand</p>
+              <p class="education-year">2020 – 2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
+        
       <div class="hero-actions">
           <a class="btn btn-primary" href="#work">Explore My Work ↗</a>
-          <a class="btn btn-secondary" href="#contact">Get in Touch</a>
         </div>
       </div>
     </header>
-
-    
+ 
 <section id="work">
   <div class="container">
 
