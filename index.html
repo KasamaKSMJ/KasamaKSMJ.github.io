@@ -636,33 +636,63 @@
     
     /* Company Selector */
     .company-selector {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-bottom: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
     }
 
     .company-btn {
-      text-align: left;
-      padding: 22px;
-      background: var(--surface);
-      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    
+      padding: 10px 20px;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      cursor: pointer;
+      border-radius: 999px;
+    
+      background: var(--surface);
+      color: var(--muted);
+    
       font-family: inherit;
-      transition: background .25s, border-color .25s,
-                  transform .25s;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.4;
+    
+      cursor: pointer;
+      white-space: nowrap;
+    
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
     }
 
     .company-btn:hover {
+      color: var(--text);
       border-color: var(--accent);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .company-btn.active {
-      background: #252a20;
+      background: var(--accent);
+      color: #171a12;
       border-color: var(--accent);
+      font-weight: 600;
+      box-shadow: 0 0 14px rgba(197, 255, 101, 0.12);
+    }
+
+    .company-btn.active:hover {
+      box-shadow: 0 0 18px rgba(197, 255, 101, 0.25);
+    }
+
+    /* Keyboard accessibility */
+    .company-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
     .company-number {
@@ -688,6 +718,8 @@
       margin-top: 8px;
     }
 
+    
+
     .project-group {
       display: none;
     }
@@ -711,18 +743,16 @@
     }
   }
 
-  @media (max-width: 700px) {
+  /* Mobile */
+  @media (max-width: 600px) {
     .company-selector {
-      grid-template-columns: 1fr;
+      gap: 8px;
     }
 
     .company-btn {
-      padding: 16px 20px;
-    }
-
-    .company-number {
-      font-size: 24px;
-      margin-bottom: 6px;
+      padding: 9px 15px;
+      font-size: 12px;
+      white-space: normal;
     }
   }
     
@@ -940,10 +970,6 @@
           </div>
         </div>
       </section>
-        
-      <div class="hero-actions">
-          <a class="btn btn-primary" href="#work">Explore My Work ↗</a>
-        </div>
       </div>
     </header>
  
@@ -964,39 +990,22 @@
 
     <!-- Company Buttons -->
     <div class="company-selector">
-
       <button class="company-btn active"
-        data-company="ttt"
-        aria-pressed="true">
-        <span class="company-number">01</span>
-        <span class="company-name">
-          TTT Brother Co., Ltd.
-        </span>
-        <span class="company-count">2 Projects ↗</span>
+      data-company="ttt"
+      aria-pressed="true">
+        TTT Brother Co., Ltd.
       </button>
-
       <button class="company-btn"
-        data-company="dhiteta"
-        aria-pressed="false">
-        <span class="company-number">02</span>
-        <span class="company-name">
-          Dhiteta Co., Ltd.
-        </span>
-        <span class="company-count">3 Projects ↗</span>
+      data-company="dhiteta"
+      aria-pressed="false">
+        Dhiteta Co., Ltd.
       </button>
-
       <button class="company-btn"
-        data-company="acu"
-        aria-pressed="false">
-        <span class="company-number">03</span>
-        <span class="company-name">
-          ACU PAY (Thailand) Co., Ltd.
-        </span>
-        <span class="company-count">4 Projects ↗</span>
+      data-company="acu"
+      aria-pressed="false">
+        ACU PAY (Thailand) Co., Ltd.
       </button>
-
     </div>
-
     <!-- 01: TTT Brother -->
     <div class="projects project-group active"
       data-project-group="ttt">
