@@ -384,43 +384,127 @@
       font-size: 13px;
       font-weight: 700;
       color: var(--accent);
+    }   
+    /* About Me Layout */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+      gap: 64px;
+      align-items: start;
     }
 
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
+    .about-content {
+      min-width: 0;
+    }
+
+    .about-title {
+      margin-top: 24px;
+      font-size: clamp(30px, 3.2vw, 44px);
+      line-height: 1.2;
+      letter-spacing: -1.2px;
     }
 
     .about-text {
       color: var(--muted);
-      margin-top: 20px;
+      margin-top: 22px;
       font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .about-actions {
+      margin-top: 28px;
     }
 
     .skills {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
+      align-content: start;
+      min-width: 0;
     }
 
     .skill {
-      padding: 17px;
+      min-width: 0;
+      padding: 20px 16px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: 10px;
       font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .skill:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
     }
 
     .skill span {
       display: block;
       color: var(--muted);
       font-size: 12px;
-      margin-top: 5px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-top: 8px;
     }
-
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 32px;
+      }
+    
+      .about-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    
+      .about-actions .btn {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 700px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    
+      .about-title {
+        font-size: 34px;
+      }
+    
+      .about-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    
+      .about-actions .btn {
+        width: auto;
+      }
+    
+      .skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+    
+      .skill {
+        padding: 15px 12px;
+        font-size: 13px;
+      }
+    
+      .skill span {
+        font-size: 11px;
+      }
+    }
+    
+    @media (max-width: 380px) {
+      .skills {
+        grid-template-columns: 1fr;
+      }
+    }
     /* Contact */
     .contact-box {
       padding: 55px;
@@ -658,61 +742,94 @@
           experiences that <span>work.</span>
         </h1>
       <section id="about">
-      <div class="container about-grid">
-        <div class="reveal">
-          <p class="eyebrow">A Little About Me</p>
+        <div class="container about-layout">
+      
+          <!-- Left: About Me -->
+          <div class="about-content reveal">
+            <p class="eyebrow">Professional Profile</p>
+      
+            <p class="about-text">
+              Experienced in UX/UI and Graphic Design across IT and
+              financial sectors, with expertise in improving and refining
+              designs to create user-centered solutions based on business
+              and user requirements.
+      
+              <br><br>
+      
+              Skilled in developing User Journeys, designing websites
+              using WordPress, and creating website mockups that are
+              implemented into the organization’s live website.
+            </p>
+      
+            <div class="hero-actions about-actions">
+              <a class="btn btn-primary" href="#work">
+                Explore My Work ↗
+              </a>
+      
+              <a class="btn btn-secondary" href="#contact">
+                Get in Touch
+              </a>
+            </div>
           </div>
-          <p class="about-text">
-            Experienced in UX/UI and Graphic Design across IT and financial sectors,<br>
-          with expertise in improving and refining designs, creating user-centered solutions based on business and user requirements,<br>
-          developing User Journeys, and designing websites using WordPress.<br>
-          Also experienced in creating website mockups and implementing them into the organization’s live website.
-          </p>
-        </div>
-        <div class="skills reveal">
-          <div class="skill">
-            User Experience Design (UX)
-            <span>User needs & requirements</span>
-          </div>
-        <div class="skill">
-            User Interface Design (UI)
-            <span>Interface & visual design</span>
-        </div>
-          <div class="skill">
-            Wireframing
-            <span>Information architecture</span>
-          </div>
-          <div class="skill">
-            Design Systems
-            <span>Design System and Components Asset</span>
-          </div>
-          <div class="skill">
-            Dashboard Design
-            <span>Dashboard Design</span>
-          </div>
-          <div class="skill">
-            Prototyping
-            <span>Interactive experiences</span>
-          </div>
-          <div class="skill">
+      
+          <!-- Right: Skills -->
+          <div class="skills reveal">
+      
+            <div class="skill">
+              User Experience Design (UX)
+              <span>User needs & requirements</span>
+            </div>
+      
+            <div class="skill">
+              User Interface Design (UI)
+              <span>Interface & visual design</span>
+            </div>
+      
+            <div class="skill">
+              Wireframing
+              <span>Information architecture</span>
+            </div>
+      
+            <div class="skill">
+              Design Systems
+              <span>Design systems & component assets</span>
+            </div>
+      
+            <div class="skill">
+              Dashboard Design
+              <span>Data visualization & dashboards</span>
+            </div>
+      
+            <div class="skill">
+              Prototyping
+              <span>Interactive experiences</span>
+            </div>
+      
+            <div class="skill">
               WordPress (Web Design)
-              <span>Developer handoff & iteration</span>
+              <span>Website design & implementation</span>
+            </div>
+      
+            <div class="skill">
+              Usability Testing
+              <span>Evaluating user experiences</span>
+            </div>
+      
+            <div class="skill">
+              Graphic Design
+              <span>Graphic & artwork design</span>
+            </div>
+      
+            <div class="skill">
+              HTML / CSS / JavaScript
+              <span>Front-end development fundamentals (Beginer and Learning)</span>
+            </div>
+      
           </div>
-          <div class="skill">
-            Usability Testing
-            <span>Usability Testing</span>
-          </div>
-          <div class="skill">
-            Graphic Design
-            <span>Graphic and Artwork Design</span>
-          </div>
-          <div class="skill">
-            HTML/CSS/JavaScript
-            <span>Developer handoff & iteration</span>
-          </div>
-          </div>
+      
         </div>
       </section>
+
       <div class="hero-actions">
           <a class="btn btn-primary" href="#work">Explore My Work ↗</a>
           <a class="btn btn-secondary" href="#contact">Get in Touch</a>
@@ -726,8 +843,8 @@
 
     <div class="section-heading reveal">
       <div>
-        <p class="eyebrow">Selected Work / 2024–2026</p>
-        <h2>Featured Projects</h2>
+        <p class="eyebrow">Work Experiences / 2024–2026</p>
+        <h2>My Projects</h2>
       </div>
 
       <p class="section-desc">
