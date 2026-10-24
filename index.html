@@ -424,26 +424,40 @@
     }
 
     #about .skill {
-      min-width: 0;
-      padding: 17px 15px;
+      position: relative;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
+      padding: 17px 15px;
+    
       font-size: 14px;
       line-height: 1.5;
+    
+      transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
     }
 
-    .skill:hover {
+    #about .skill:hover {
       border-color: var(--accent);
-      transform: translateY(-2px);
+      background: rgba(197, 255, 101, 0.06);
+    
+      box-shadow:
+        0 0 6px rgba(197, 255, 101, 0.20),
+        0 0 18px rgba(197, 255, 101, 0.12),
+        inset 0 0 8px rgba(197, 255, 101, 0.04);
+    
+      transform: translateY(-3px);
     }
 
     #about .skill span {
       display: block;
       margin-top: 6px;
+      color: var(--muted);
       font-size: 12px;
       line-height: 1.6;
-      color: var(--muted);
     }
     
     /* Responsive */
