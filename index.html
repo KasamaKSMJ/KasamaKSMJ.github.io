@@ -538,6 +538,98 @@
         gap: 12px 20px;
       }
     }
+    
+    /* Company Selector */
+    .company-selector {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .company-btn {
+      text-align: left;
+      padding: 22px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .25s, border-color .25s,
+                  transform .25s;
+    }
+
+    .company-btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .company-btn.active {
+      background: #252a20;
+      border-color: var(--accent);
+    }
+
+    .company-number {
+      display: block;
+      color: var(--accent);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .company-name {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .company-count {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .project-group {
+      display: none;
+    }
+
+    .project-group.active {
+      display: grid;
+    }
+
+    .project-group.active .project-card {
+      animation: projectFade .35s ease both;
+    }
+
+    @keyframes projectFade {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .company-selector {
+      grid-template-columns: 1fr;
+    }
+
+    .company-btn {
+      padding: 16px 20px;
+    }
+
+    .company-number {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+  }
   </style>
 </head>
 
@@ -552,8 +644,8 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
-        <li><a href="#work">Projects</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#work">Projects</a></li>
       </ul>
     </div>
   </nav>
@@ -562,7 +654,6 @@
     <header class="hero container" id="home">
       <div>
         <p class="eyebrow">UX/UI Designer · Graphic Designer</p>
-
         <h1>Designing digital<br>
           experiences that <span>work.</span>
         </h1>
@@ -570,6 +661,7 @@
       <div class="container about-grid">
         <div class="reveal">
           <p class="eyebrow">A Little About Me</p>
+          </div>
           <p class="about-text">
             Experienced in UX/UI and Graphic Design across IT and financial sectors,<br>
           with expertise in improving and refining designs, creating user-centered solutions based on business and user requirements,<br>
@@ -589,6 +681,10 @@
           <div class="skill">
             Wireframing
             <span>Information architecture</span>
+          </div>
+          <div class="skill">
+            Design Systems
+            <span>Design System and Components Asset</span>
           </div>
           <div class="skill">
             Dashboard Design
@@ -624,154 +720,342 @@
       </div>
     </header>
 
-    <section id="work">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Work Experiences / 2024–2026</p>
-            <h2>My Projects</h2>
-          </div>
-          <p class="section-desc">
-            A selection of digital products, enterprise systems,
-            and payment experiences.
-          </p>
-        </div>
+    
+<section id="work">
+  <div class="container">
 
-        <div class="hero-actions">
-          <a class="btn btn-primary">01</a>
-          <a class="btn btn-secondary">02</a>
-        </div>
-
-        <div class="projects">
-
-          <article class="project-card reveal">
-            <div class="project-cover cover-erp">
-              <div class="mock-window">
-                <div class="mock-top"><i></i><i></i><i></i></div>
-                <div class="mock-body">
-                  <div class="mock-sidebar"></div>
-                  <div class="mock-content">
-                    <div class="mock-block"></div>
-                    <div class="mock-block"></div>
-                    <div class="mock-block"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="tag">Enterprise</span>
-                <span class="tag">ERP</span>
-                <span class="tag">UX/UI</span>
-              </div>
-              <h3>ERP Management System</h3>
-              <p>
-                Designing an integrated platform for product,
-                customer, inventory, and logistics management.
-              </p>
-              <a class="project-link" href="#contact">
-                View Case Study ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-cover cover-logistics">
-              <div class="mock-window">
-                <div class="mock-top"><i></i><i></i><i></i></div>
-                <div class="mock-body">
-                  <div class="mock-sidebar"></div>
-                  <div class="mock-content">
-                    <div class="mock-block"></div>
-                    <div class="mock-block"></div>
-                    <div class="mock-block"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="tag">Dashboard</span>
-                <span class="tag">Logistics</span>
-                <span class="tag">MRP</span>
-              </div>
-              <h3>Logistics & MRP Dashboard</h3>
-              <p>
-                Simplifying complex transportation and import-export
-                workflows through structured data and dashboards.
-              </p>
-              <a class="project-link" href="#contact">
-                View Case Study ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-cover cover-wallet">
-              <div class="phone">
-                <p class="phone-label">ACU PAY</p>
-                <div class="phone-card"></div>
-                <div class="phone-line"></div>
-                <div class="phone-line"></div>
-                <div class="phone-line"></div>
-              </div>
-              <div class="phone" style="transform:rotate(-8deg) translateX(-5px)">
-                <p class="phone-label">VISA CARD</p>
-                <div class="phone-card" style="background:#303a55"></div>
-                <div class="phone-line"></div>
-                <div class="phone-line"></div>
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="tag">Fintech</span>
-                <span class="tag">E-Wallet</span>
-                <span class="tag">Mobile App</span>
-              </div>
-              <h3>ACU PAY Visa Card</h3>
-              <p>
-                Designing a unified payment experience for card
-                management, global payments, and payment security.
-              </p>
-              <a class="project-link" href="#contact">
-                View Case Study ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-cover cover-master">
-              <div class="mock-window">
-                <div class="mock-top"><i></i><i></i><i></i></div>
-                <div class="mock-body">
-                  <div class="mock-sidebar"></div>
-                  <div class="mock-content">
-                    <div class="mock-block"></div>
-                    <div class="mock-block"></div>
-                    <div class="mock-block"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="tag">Data Management</span>
-                <span class="tag">System Design</span>
-              </div>
-              <h3>Master SKU & Data Platform</h3>
-              <p>
-                Structuring product information to improve consistency
-                and data management across integrated platforms.
-              </p>
-              <a class="project-link" href="#contact">
-                View Case Study ↗
-              </a>
-            </div>
-          </article>
-
-        </div>
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">Selected Work / 2024–2026</p>
+        <h2>Featured Projects</h2>
       </div>
-    </section>
+
+      <p class="section-desc">
+        Select a company to explore the projects
+        I worked on during my career.
+      </p>
+    </div>
+
+    <!-- Company Buttons -->
+    <div class="company-selector">
+
+      <button class="company-btn active"
+        data-company="ttt"
+        aria-pressed="true">
+        <span class="company-number">01</span>
+        <span class="company-name">
+          TTT Brother Co., Ltd.
+        </span>
+        <span class="company-count">2 Projects ↗</span>
+      </button>
+
+      <button class="company-btn"
+        data-company="dhiteta"
+        aria-pressed="false">
+        <span class="company-number">02</span>
+        <span class="company-name">
+          Dhiteta Co., Ltd.
+        </span>
+        <span class="company-count">3 Projects ↗</span>
+      </button>
+
+      <button class="company-btn"
+        data-company="acu"
+        aria-pressed="false">
+        <span class="company-number">03</span>
+        <span class="company-name">
+          ACU PAY (Thailand) Co., Ltd.
+        </span>
+        <span class="company-count">4 Projects ↗</span>
+      </button>
+
+    </div>
+
+    <!-- 01: TTT Brother -->
+    <div class="projects project-group active"
+      data-project-group="ttt">
+
+      <article class="project-card">
+        <div class="project-cover cover-erp">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Project Management</span>
+            <span class="tag">UX/UI Design</span>
+          </div>
+          <h3>TTT SpaceShip</h3>
+          <p>
+            A game-inspired project management system designed
+            to support task management, teamwork, and collaboration.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-cover cover-logistics">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Logistics</span>
+            <span class="tag">Dashboard</span>
+            <span class="tag">MRP</span>
+          </div>
+          <h3>TIFFA EDI (EzyDashboard)</h3>
+          <p>
+            Designing logistics and transportation interfaces
+            for data management, monitoring, and dashboard workflows.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- 02: Dhiteta -->
+    <div class="projects project-group"
+      data-project-group="dhiteta">
+
+      <article class="project-card">
+        <div class="project-cover cover-master">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Data Management</span>
+            <span class="tag">UX/UI Design</span>
+          </div>
+          <h3>Allkons Master SKU</h3>
+          <p>
+            Centralizing product information to improve data
+            consistency and management across integrated platforms.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-cover cover-erp">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">API Management</span>
+            <span class="tag">UX/UI Design</span>
+          </div>
+          <h3>Allkons OpenAPI</h3>
+          <p>
+            Designing an API management platform for documentation,
+            API discovery, and secure external developer access.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-cover cover-logistics">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Organization</span>
+            <span class="tag">Dashboard</span>
+          </div>
+          <h3>Allkons Organization Center</h3>
+          <p>
+            Organizing company structures, employee roles,
+            permissions, and organizational dashboards.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- 03: ACU PAY -->
+    <div class="projects project-group"
+      data-project-group="acu">
+
+      <article class="project-card">
+        <div class="project-cover cover-wallet">
+          <div class="phone">
+            <p class="phone-label">ACU PAY</p>
+            <div class="phone-card"></div>
+            <div class="phone-line"></div>
+            <div class="phone-line"></div>
+            <div class="phone-line"></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Fintech</span>
+            <span class="tag">Mobile App</span>
+          </div>
+          <h3>ACU PAY Application Features</h3>
+          <p>
+            Designing key app features, including Top-up,
+            Coupon, and payment-related user experiences.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-cover cover-wallet">
+          <div class="phone">
+            <p class="phone-label">VISA CARD</p>
+            <div class="phone-card"
+              style="background:#303a55"></div>
+            <div class="phone-line"></div>
+            <div class="phone-line"></div>
+            <div class="phone-line"></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Fintech</span>
+            <span class="tag">Visa Card</span>
+            <span class="tag">UX/UI</span>
+          </div>
+          <h3>ACU VISA Card</h3>
+          <p>
+            Designing the Visa Card user journey, wireframes,
+            and interfaces in collaboration with the Hong Kong team.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-cover cover-master">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">Web Design</span>
+          </div>
+          <h3>WordPress Web Design</h3>
+          <p>
+            Designing and developing website experiences
+            for ACU PAY and ACU VISA Card promotional content.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-cover cover-erp">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Graphic Design</span>
+            <span class="tag">Illustration</span>
+          </div>
+          <h3>Graphic Design</h3>
+          <p>
+            Creating marketing visuals, promotional artwork,
+            banners, and illustrations for digital campaigns.
+          </p>
+          <a class="project-link" href="#contact">
+            View Case Study ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
   </main>
 
   <footer>
@@ -819,6 +1103,38 @@
     } else {
       revealItems.forEach(item => item.classList.add("visible"));
     }
+    
+    const companyButtons = document.querySelectorAll(".company-btn");
+    const projectGroups = document.querySelectorAll(".project-group");
+
+    companyButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selectedCompany = button.dataset.company;
+
+    // Update active company button
+    companyButtons.forEach(item => {
+      const isActive = item === button;
+
+    item.classList.toggle("active", isActive);
+    item.setAttribute("aria-pressed", String(isActive));
+    });
+
+    // Show projects belonging to the selected company
+    projectGroups.forEach(group => {
+      const isSelected =
+        group.dataset.projectGroup === selectedCompany;
+
+      group.classList.toggle("active", isSelected);
+
+      // Reveal newly displayed project cards
+      if (isSelected) {
+        group.querySelectorAll(".project-card").forEach(card => {
+          card.classList.add("visible");
+        });
+      }
+    });
+  });
+});
   </script>
 </body>
 </html>
