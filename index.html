@@ -192,7 +192,7 @@
 
     /* Sections */
     section {
-      padding: 85px 0;
+      padding: 35px 0;
     }
 
     .section-heading {
@@ -386,10 +386,13 @@
       color: var(--accent);
     }   
     /* About Me Layout */
+    #about {
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
+    
     .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
-      gap: 64px;
+      gap: 32px;
       align-items: start;
     }
 
@@ -405,10 +408,8 @@
     }
 
     .about-text {
-      color: var(--muted);
-      margin-top: 22px;
-      font-size: 15px;
-      line-height: 1.9;
+      margin-top: 12px;
+      line-height: 1.7;
     }
 
     .about-actions {
@@ -716,13 +717,18 @@
   }
     
   /* Education Section */
-  .education-section {
-    padding-top: 40px;
-    padding-bottom: 70px;
+  #education {
+    padding-top: 25px;
+    padding-bottom: 35px;
   }
-  
+    
+  .education-section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   .education-section > .eyebrow {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
   
   .education-item {
@@ -805,7 +811,8 @@
         <h1>Welcome to<br>
           My Work <span>Portfolio.</span>
         </h1>
-
+        
+      <section id="about">
         <div class="container about-layout" id="about">
           <!-- Left: About Me -->
           <div class="about-content reveal">
@@ -879,10 +886,7 @@
             </div>
           </div>
         </div>
-        
-      <!-- section id="about">
-        
-      </section> -->
+      </section>
    
       <section id="education">
         <div class="container education-section">
