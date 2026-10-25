@@ -166,17 +166,18 @@
       font-size: 14px;
       color: var(--accent);
     }
-
+    
     .gallery {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
+      align-items: start;
     }
-
+    
     .gallery figure {
       margin: 0;
     }
-
+    
     .gallery img {
       display: block;
       width: 100%;
@@ -200,11 +201,7 @@
     }
 
     @media (max-width: 650px) {
-      .hero {
-        padding-top: 44px;
-      }
-
-      .details {
+      .gallery {
         grid-template-columns: 1fr;
       }
     }
@@ -281,10 +278,10 @@
         </p>
       </div>
     </section>
-
+    
     <section class="section">
       <h2>Final UI Design</h2>
-
+    
       <div class="gallery">
         <figure>
           <img
@@ -292,16 +289,14 @@
             alt="TTT SpaceShip interface design 1"
             loading="lazy"
           >
-          <figcaption>Interface Design — Overview</figcaption>
         </figure>
-
+    
         <figure>
           <img
             src="../images/ttt-spaceship-ui-02.jpg"
             alt="TTT SpaceShip interface design 2"
             loading="lazy"
           >
-          <figcaption>Interface Design — Task Management</figcaption>
         </figure>
       </div>
     </section>
