@@ -112,19 +112,38 @@
       gap: 16px;
     }
 
+    
     .detail-card {
       padding: 20px;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
+    
+      transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+    }
+    
+    .detail-card:hover {
+      border-color: var(--accent);
+      background: rgba(197, 255, 101, 0.04);
+    
+      box-shadow:
+        0 0 8px rgba(197, 255, 101, 0.16),
+        0 0 20px rgba(197, 255, 101, 0.08);
+    
+      transform: translateY(-3px);
+    }
+    
+    /* Project Overview */
+    .overview-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    .overview-detail-card {
-      max-width: 100%
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--surface);
-    }
 
     .detail-card h3 {
       margin-top: 0;
@@ -198,17 +217,18 @@
           alt="TTT SpaceShip project cover"
         >
       </div>
-      
+
       <section class="section">
-          <div class="overview-detail-card">
-            <h3>Project Overview</h3>
-            <p>A game-inspired software management platform designed around IT processes to engage the younger generation, 
+        <h2>Project Overview</h2>
+      
+        <div class="detail-card overview-card">
+          <p>A game-inspired software management platform designed around IT processes to engage the younger generation, 
               who value freedom, challenges, and competition over rigid rules and restrictions. Rather than dictating how tasks should be completed, 
               the platform focuses on setting clear goals while giving users the freedom to choose their own approach. It serves as a flexible and efficient 
               tool that supports comprehensive work management, enabling teams to manage their workflows effectively while encouraging creativity 
               and friendly competition.
             </p>
-          </div>
+        </div>
       </section>
 
       <section class="section">
